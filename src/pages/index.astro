@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+<Layout>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;">
+    <div style="max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;">
+      <span style="font-size:20px;font-weight:900;letter-spacing:-0.5px;">
+        <span style="color:#f5c400;">DOMAC</span><span style="color:#f5f5f5;font-weight:400;"> Accesos</span>
+      </span>
+      <div style="display:flex;gap:2rem;font-size:14px;font-weight:500;color:#aaa;">
+        <a href="#servicios" style="transition:color 0.2s;" onmouseover="this.style.color='#f5c400'" onmouseout="this.style.color='#aaa'">Servicios</a>
+        <a href="#como-funciona" style="transition:color 0.2s;" onmouseover="this.style.color='#f5c400'" onmouseout="this.style.color='#aaa'">Cómo funciona</a>
+        <a href="#contacto" style="transition:color 0.2s;" onmouseover="this.style.color='#f5c400'" onmouseout="this.style.color='#aaa'">Contacto</a>
+      </div>
+      <a href="#contacto" style="background:#f5c400;color:#0a0a0a;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:700;">
+        Pedir demo
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="min-height:100vh;display:flex;align-items:center;padding:120px 2rem 80px;background:radial-gradient(ellipse at 60% 40%, rgba(245,196,0,0.08) 0%, transparent 60%), #0a0a0a;">
+    <div style="max-width:1100px;margin:0 auto;width:100%;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#1a1a0a;border:1px solid #f5c40030;border-radius:20px;padding:6px 14px;font-size:12px;color:#f5c400;font-weight:600;margin-bottom:2rem;letter-spacing:0.05em;">
+        ⚡ DOMOTIZACIÓN DE ACCESOS MUNICIPALES
+      </div>
+      <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:1.5rem;">
+        Abre puertas.<br/>
+        <span style="color:#f5c400;">Sin llaves.<br/>Sin papeles.</span>
+      </h1>
+      <p style="font-size:clamp(1rem,2vw,1.2rem);color:#888;max-width:560px;line-height:1.7;margin-bottom:2.5rem;">
+        Soluciones de control de acceso inteligente para gimnasios, polideportivos, bibliotecas y servicios municipales. Gestionado desde la nube, sin obras complejas.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#contacto" style="background:#f5c400;color:#0a0a0a;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:800;">
+          Solicitar demo gratuita →
+        </a>
+        <a href="#como-funciona" style="background:transparent;color:#f5f5f5;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:600;border:1px solid #333;">
+          Ver cómo funciona
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div style="display:flex;gap:3rem;flex-wrap:wrap;margin-top:4rem;padding-top:2rem;border-top:1px solid #1a1a1a;">
+        {[
+          ['100%', 'Sin llave física'],
+          ['24/7', 'Control remoto'],
+          ['<1 día', 'Instalación'],
+          ['RGPD', 'Cumplimiento legal'],
+        ].map(([n, l]) => (
+          <div>
+            <p style="font-size:1.8rem;font-weight:900;color:#f5c400;">{n}</p>
+            <p style="font-size:13px;color:#666;margin-top:2px;">{l}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" style="padding:100px 2rem;background:#080808;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:0.15em;color:#f5c400;text-transform:uppercase;margin-bottom:1rem;">Servicios</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;margin-bottom:1rem;">
+        Todo lo que necesita<br/>un servicio público moderno
+      </h2>
+      <p style="color:#666;max-width:520px;margin-bottom:4rem;font-size:15px;">
+        Desde la apertura de una puerta hasta la gestión completa de reservas y abonos. Una sola plataforma.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:1.5px;background:#1a1a1a;border-radius:16px;overflow:hidden;">
+        {[
+          {
+            icon: '🔐',
+            title: 'Control de acceso por PIN',
+            desc: 'Cada usuario recibe un PIN personal e intransferible. Sin tarjetas que perder, sin llaves que copiar.',
+          },
+          {
+            icon: '📱',
+            title: 'Gestión desde la nube',
+            desc: 'Añade, modifica o desactiva accesos en tiempo real desde cualquier dispositivo, sin desplazamientos.',
+          },
+          {
+            icon: '🏛️',
+            title: 'Abonos municipales online',
+            desc: 'Los ciudadanos se abonan y pagan desde el móvil. El sistema asigna su PIN automáticamente.',
+          },
+          {
+            icon: '📅',
+            title: 'Sistema de reservas',
+            desc: 'Gestión de turnos y franjas horarias para pistas, piscinas, salas y cualquier instalación pública.',
+          },
+          {
+            icon: '📊',
+            title: 'Informes de uso',
+            desc: 'Estadísticas de accesos, ocupación y usuarios activos para optimizar la gestión municipal.',
+          },
+          {
+            icon: '🔧',
+            title: 'Instalación en menos de un día',
+            desc: 'Hardware compatible con cierres existentes. Sin obras, sin cortes de servicio.',
+          },
+        ].map(s => (
+          <div style="background:#0d0d0d;padding:2rem;">
+            <div style="font-size:2rem;margin-bottom:1rem;">{s.icon}</div>
+            <h3 style="font-size:17px;font-weight:700;margin-bottom:0.5rem;">{s.title}</h3>
+            <p style="font-size:14px;color:#666;line-height:1.6;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section id="como-funciona" style="padding:100px 2rem;background:#0a0a0a;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:0.15em;color:#f5c400;text-transform:uppercase;margin-bottom:1rem;">Proceso</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;margin-bottom:4rem;">
+        En marcha en 4 pasos
+      </h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:2rem;">
+        {[
+          ['01', 'Análisis', 'Estudiamos vuestra instalación y necesidades. Sin compromiso.'],
+          ['02', 'Instalación', 'Montamos el hardware en menos de un día. Sin obras.'],
+          ['03', 'Configuración', 'Subimos vuestra plataforma personalizada a la nube.'],
+          ['04', 'En marcha', 'Los ciudadanos ya pueden abonarse y acceder con su PIN.'],
+        ].map(([n, t, d]) => (
+          <div style="position:relative;padding-left:1rem;border-left:2px solid #f5c40040;">
+            <p style="font-size:3rem;font-weight:900;color:#f5c40015;line-height:1;margin-bottom:0.5rem;">{n}</p>
+            <h3 style="font-size:18px;font-weight:700;color:#f5c400;margin-bottom:0.5rem;">{t}</h3>
+            <p style="font-size:14px;color:#666;line-height:1.6;">{d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section style="padding:80px 2rem;background:#080808;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:0.15em;color:#f5c400;text-transform:uppercase;margin-bottom:1rem;">Clientes</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;margin-bottom:3rem;">
+        Diseñado para<br/>la administración pública
+      </h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+        {['Ayuntamientos', 'Diputaciones', 'Gimnasios municipales', 'Polideportivos', 'Bibliotecas', 'Piscinas públicas', 'Centros cívicos', 'Pistas de pádel'].map(t => (
+          <span style="background:#111;border:1px solid #222;padding:10px 18px;border-radius:8px;font-size:14px;color:#aaa;">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" style="padding:100px 2rem;background:#0a0a0a;">
+    <div style="max-width:600px;margin:0 auto;text-align:center;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:0.15em;color:#f5c400;text-transform:uppercase;margin-bottom:1rem;">Contacto</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;margin-bottom:1rem;">
+        Hablamos sin compromiso
+      </h2>
+      <p style="color:#666;margin-bottom:3rem;font-size:15px;">
+        Cuéntanos tu instalación y te preparamos una propuesta a medida en 48 horas.
+      </p>
+
+      <form id="form-contacto" style="display:flex;flex-direction:column;gap:1rem;text-align:left;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div>
+            <label style="font-size:13px;color:#888;display:block;margin-bottom:6px;">Nombre *</label>
+            <input name="nombre" required type="text" placeholder="Tu nombre"
+              style="width:100%;background:#111;border:1px solid #222;color:#f5f5f5;padding:12px 14px;border-radius:8px;font-size:14px;outline:none;" />
+          </div>
+          <div>
+            <label style="font-size:13px;color:#888;display:block;margin-bottom:6px;">Organismo *</label>
+            <input name="organismo" required type="text" placeholder="Ayuntamiento de..."
+              style="width:100%;background:#111;border:1px solid #222;color:#f5f5f5;padding:12px 14px;border-radius:8px;font-size:14px;outline:none;" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size:13px;color:#888;display:block;margin-bottom:6px;">Email *</label>
+          <input name="email" required type="email" placeholder="tu@ayuntamiento.es"
+            style="width:100%;background:#111;border:1px solid #222;color:#f5f5f5;padding:12px 14px;border-radius:8px;font-size:14px;outline:none;" />
+        </div>
+        <div>
+          <label style="font-size:13px;color:#888;display:block;margin-bottom:6px;">Teléfono</label>
+          <input name="telefono" type="tel" placeholder="600 000 000"
+            style="width:100%;background:#111;border:1px solid #222;color:#f5f5f5;padding:12px 14px;border-radius:8px;font-size:14px;outline:none;" />
+        </div>
+        <div>
+          <label style="font-size:13px;color:#888;display:block;margin-bottom:6px;">¿Qué necesitáis? *</label>
+          <textarea name="mensaje" required rows="4" placeholder="Describid vuestra instalación y lo que buscáis..."
+            style="width:100%;background:#111;border:1px solid #222;color:#f5f5f5;padding:12px 14px;border-radius:8px;font-size:14px;outline:none;resize:vertical;"></textarea>
+        </div>
+        <button type="submit" id="btn-submit"
+          style="background:#f5c400;color:#0a0a0a;padding:14px;border-radius:10px;font-size:16px;font-weight:800;border:none;cursor:pointer;margin-top:0.5rem;">
+          Enviar mensaje →
+        </button>
+        <p id="form-msg" style="text-align:center;font-size:14px;display:none;"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid #1a1a1a;padding:2rem;text-align:center;">
+    <p style="font-size:13px;color:#444;">
+      © 2026 <strong style="color:#f5c400;">Domac Accesos S.L.</strong> · Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-contacto')
+    const btn = document.getElementById('btn-submit')
+    const msg = document.getElementById('form-msg')
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      btn.textContent = 'Enviando...'
+      btn.disabled = true
+
+      const data = Object.fromEntries(new FormData(form))
+
+      const res = await fetch('/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      msg.style.display = 'block'
+      if (res.ok) {
+        msg.style.color = '#4ade80'
+        msg.textContent = '✓ Mensaje enviado. Os contactamos en menos de 48 horas.'
+        form.reset()
+        btn.textContent = 'Enviado'
+      } else {
+        msg.style.color = '#f87171'
+        msg.textContent = 'Error al enviar. Escríbenos directamente a contacto@domac-accesos.es'
+        btn.textContent = 'Enviar mensaje →'
+        btn.disabled = false
+      }
+    })
+  </script>
+
+</Layout>
